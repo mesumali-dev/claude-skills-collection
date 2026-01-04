@@ -14,6 +14,8 @@ The project is organized into various skills located in `claude-code-skills-lab/
 - **docx**: Comprehensive tools for creating, editing, and analyzing Word documents (.docx), including redlining.
 - **internal-comms**: Templates and guidelines for writing effective internal communications (newsletters, updates).
 - **nextjs**: Best practices, patterns, and checklists for Next.js App Router development.
+- **openai-agents-python**: Token-efficient documentation fetcher for OpenAI Agents Python SDK (multi-agent workflows, handoffs, guardrails, tracing).
+- **openai-chatkit**: Framework for building AI-powered chat experiences with ChatKit (streaming, theming, tools, React/Python).
 - **pdf**: Toolkit for manipulating PDFs, including text extraction, creation, form filling, and merging.
 - **pptx**: Tools for creating and editing PowerPoint presentations, including HTML-to-PPTX conversion.
 - **python-code-writer**: Guidelines and conventions for writing clean, idiomatic Python code.
