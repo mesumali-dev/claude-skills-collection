@@ -20,7 +20,20 @@ Token-efficient documentation fetcher using Context7 via custom script.
 
 ## CRITICAL: Do NOT Use MCP Tools Directly
 
+> ⚠️ **STOP! Before calling any MCP tool for OpenAI Agents SDK, use this skill instead.**
+
 **NEVER use `mcp__context7__resolve-library-id` or `mcp__context7__query-docs` for OpenAI Agents SDK.**
+
+**When you see any of these in a query, use THIS SKILL not MCP:**
+- "OpenAI Agents SDK", "agents sdk", "openai-agents"
+- "handoffs", "guardrails", "agent tools", "agent tracing"
+- "multi-agent", "triage agent", "specialist agent"
+- Questions like "How do I create an agent?", "How do handoffs work?"
+
+**First, set the SKILL_DIR variable:**
+```bash
+SKILL_DIR=".claude/skills/openai-agents-python"
+```
 
 This skill runs Context7 via a custom script that:
 - Pre-configures the library ID (no resolve step needed)
@@ -29,15 +42,24 @@ This skill runs Context7 via a custom script that:
 
 ## Quick Start
 
-**ALWAYS use the fetch-docs.sh script:**
+**ALWAYS use the fetch-docs.sh script with the full path:**
 
 ```bash
+# Get the skill directory (run this first in any session)
+SKILL_DIR="$(find ~/.claude/skills -type d -name 'openai-agents-python' 2>/dev/null | head -1)"
+
 # By topic (recommended)
-bash scripts/fetch-docs.sh --topic agents
-bash scripts/fetch-docs.sh --topic handoffs --verbose
+bash "$SKILL_DIR/scripts/fetch-docs.sh" --topic agents
+bash "$SKILL_DIR/scripts/fetch-docs.sh" --topic handoffs --verbose
 
 # Custom query
-bash scripts/fetch-docs.sh "How to create an agent with custom tools"
+bash "$SKILL_DIR/scripts/fetch-docs.sh" "How to create an agent with custom tools"
+```
+
+**Or use the absolute path directly:**
+
+```bash
+bash ".claude/skills/openai-agents-python/scripts/fetch-docs.sh" --topic agents
 ```
 
 **Result:** Returns filtered documentation with ~77% token savings.
@@ -62,7 +84,7 @@ Match user query to a topic:
 ### Step 2: Fetch Documentation
 
 ```bash
-bash scripts/fetch-docs.sh --topic <topic> --verbose
+bash "$SKILL_DIR/scripts/fetch-docs.sh" --topic <topic> --verbose
 ```
 
 ### Step 3: Provide Answer
@@ -89,7 +111,7 @@ Use the filtered output to answer the user's question with code examples.
 ## Parameters
 
 ```bash
-bash scripts/fetch-docs.sh [OPTIONS] [QUERY]
+bash "$SKILL_DIR/scripts/fetch-docs.sh" [OPTIONS] [QUERY]
 ```
 
 **Options:**
@@ -104,25 +126,25 @@ bash scripts/fetch-docs.sh [OPTIONS] [QUERY]
 ### Basic Agent Creation
 
 ```bash
-bash scripts/fetch-docs.sh --topic agents --verbose
+bash "$SKILL_DIR/scripts/fetch-docs.sh" --topic agents --verbose
 ```
 
 ### Multi-Agent Handoffs
 
 ```bash
-bash scripts/fetch-docs.sh --topic handoffs
+bash "$SKILL_DIR/scripts/fetch-docs.sh" --topic handoffs
 ```
 
 ### Custom Query
 
 ```bash
-bash scripts/fetch-docs.sh "How to create a triage agent that routes to specialists"
+bash "$SKILL_DIR/scripts/fetch-docs.sh" "How to create a triage agent that routes to specialists"
 ```
 
 ### Conceptual Overview
 
 ```bash
-bash scripts/fetch-docs.sh --topic lifecycle --mode info
+bash "$SKILL_DIR/scripts/fetch-docs.sh" --topic lifecycle --mode info
 ```
 
 ## How It Works
