@@ -34,4 +34,4 @@ Add the server configurations into your `claude_desktop_config.json`:
 ---
 
 ## 👨‍💻 Maintainer
-**Syed Mesum Ali** — [@mesumali-dev](https://github.com/mesumali-dev)
+**Syed Mesum Ali** - [@mesumali-dev](https://github.com/mesumali-dev)
