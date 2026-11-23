@@ -1,4 +1,4 @@
-# 🧠 Claude Skills & MCP Tooling Collection
+# Claude Skills & MCP Tooling Collection
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python)](https://python.org)
 [![MCP](https://img.shields.io/badge/Model_Context_Protocol-Ready-purple?style=flat-square)](https://modelcontextprotocol.io/)
@@ -8,7 +8,7 @@
 
 ---
 
-## 🔧 Skills & Modules Included
+## Skills & Modules Included
 
 - **DevOps & Workspace Automation:** Shell script orchestration, repo status, and automated file pipelines.
 - **Research & Inspection:** Source tree parsing, structural code analysis, and dependency inspection.
@@ -16,7 +16,7 @@
 
 ---
 
-## 🚀 Usage with Claude Desktop / CLI
+## Usage with Claude Desktop / CLI
 
 Add the server configurations into your `claude_desktop_config.json`:
 
@@ -33,5 +33,5 @@ Add the server configurations into your `claude_desktop_config.json`:
 
 ---
 
-## 👨‍💻 Maintainer
+## ‍ Maintainer
 **Syed Mesum Ali** - [@mesumali-dev](https://github.com/mesumali-dev)
